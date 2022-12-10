@@ -1,0 +1,27 @@
+    {{deleteMsg}}
+   
+    <div class="panel-body">  
+        <table  class="table table-hover table-sm" > 
+           
+            <thead class="thead-light">  
+                <tr>  
+                    <th>Cuisine Id</th>  
+                    <th>Cuisine Name</th>  
+                    <th>Image</th>  
+                    
+                      
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let cuisine of cuisineInfo">  
+                    <td>{{cuisine.cuisineId}}</td>  
+                    <td>{{cuisine.name}}</td>  
+                    <td><div class="images"><img src="assets/images/{{cuisine.url}}" width="100px" height="100px" (click)="getCuisineItems(cuisine.cuisineId)"/></div></td>  
+                    <!-- <td><button (click)="deleteCuisine(cuisine.cuisineId)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button>   
+                        
+                    </td>   --> 
+                    
+                  </tr>   
+            </tbody><br>  
+        </table>  
+    </div>  

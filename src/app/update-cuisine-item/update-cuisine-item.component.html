@@ -1,0 +1,13 @@
+<p>update-cuisine-item works!</p>
+
+<h2>Update Cuisine Item</h2>
+<form [formGroup]="cuisineItemRef" >
+    <label>Cuisint Item Name</label>
+    <input type="text" formControlName="cuisineItemName"/><br/>
+    <label>Price</label>
+    <input type="number" formControlName="price"/><br/>
+    <label>URL</label>
+    <input type="url" formControlName="url"/><br>
+    <input type="submit" value="Update Product">
+    
+</form>

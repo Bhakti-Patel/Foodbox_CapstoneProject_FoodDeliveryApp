@@ -1,0 +1,95 @@
+ <nav  *ngIf="!nav.visible" class="navbar navbar-expand-sm bg-danger navbar-dark">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <img src="assets/images/logo.png" width="50px" height="50px"/>
+      
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="addAdmin" routerLinkActive="active" skipLocationChange="true"><b style="color: white;">Create New Admin</b></a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="cuisineList" skipLocationChange="true"><b style="color: white;">Manage Cuisines</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="adminList" skipLocationChange="true"><b style="color: white;">View All Admins</b></a>
+        </li>
+        </ul>
+        <ul class=" nav navbar-nav navbar-right">
+        <li class="nav-item">
+          <a href=" "  (click)="logout()"  skipLocationChange="true"><b style="color: white;">Logout</b></a>
+        </li>
+      </ul>
+                
+      
+    </div>
+  </nav> 
+
+  <br/>
+  <div class="panel-body">  
+    <table  class="table table-hover table-sm" > 
+       
+        <thead class="thead-light">  
+            <tr>  
+                <th>Admin Id</th>  
+                <th>Admin Email</th>  
+                <th>Admin Password</th>  
+                <th>Action</th>
+                
+                  
+            </tr>  
+        </thead>  
+        <tbody>  
+             <tr *ngFor="let admin of adminInfo">  
+                <td>{{admin.id}}</td>  
+                <td>{{admin.email}}</td>  
+                <td>{{admin.password}}</td> 
+                <td>
+                  <button class="btn btn-primary" (click)="open(editAdminModal);editAdmin(admin)">Edit</button>
+                  <button class="btn btn-primary" (click)="deleteAdmin(admin.id)">Delete</button>
+                </td> 
+
+                            
+              </tr>   
+        </tbody><br>  
+    </table>  
+</div> 
+
+<ng-template #editAdminModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Admin</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+      <form [formGroup]="editAdminForm"  (ngSubmit)="saveAdmin()">
+
+          <input type="hidden" formControlName="id"  />  
+           <div class="form-group">   
+              <label>Admin Email</label>
+              <input type="text" formControlName="email" /><br/>
+          </div>
+          <div class="form-group">   
+              <label>Password</label>
+              <input type="text" formControlName="password" /><br/>
+          </div>
+          <button type="submit" btn btn-success>Update</button>
+       </form>
+  </div>
+  <div class="modal-footer">
+       
+    <button class="btn btn-danger" (click)="modal.close('Close click')">Cancel</button>
+  </div>
+</ng-template>
+
+
+
+
+
+
+
+
+    
+   
+   
+   

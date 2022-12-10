@@ -1,0 +1,46 @@
+<p>Order Placed SuccessFully</p>
+<div >
+    <button (click)="orderReportByUser()">View Order Summary</button>
+
+
+</div > 
+
+<div style="position:absolute;right: 20px;"> 
+<p> <b>User Name: {{userName}}</b><br/>
+<b>Email: {{email}}</b></p>
+
+</div>
+ <br/>
+ <br/>   
+ 
+<div class="panel-body">  
+    <table  class="table table-hover table-sm" > 
+       
+        <thead class="thead-light">  
+            <tr>  
+                 <th>Cuisine Item Name</th>  
+                <th>Quantity</th>  
+                <th>Total Price</th> 
+               
+                  
+            </tr>  
+        </thead>  
+        <tbody>  
+             <tr *ngFor="let orderList of orderReportList">  
+              <td>{{orderList.cuisineItemName}}</td> 
+
+                <td>{{orderList.quantity}}</td> 
+                <td>{{orderList.totalPrice}}</td> 
+              
+                 
+                
+              </tr>   
+        </tbody><br>  
+    </table>  
+</div> 
+<div style="position:absolute;right: 20px;">
+ 
+
+   <h2> Total Bill Amount: {{totalBill | currency:'INR'}}</h2>
+</div>
+

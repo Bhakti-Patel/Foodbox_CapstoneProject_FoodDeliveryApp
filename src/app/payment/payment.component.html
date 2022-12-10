@@ -1,0 +1,47 @@
+
+<div class="container " style="width: 40rem;"> 
+      <div class="main-content"> 
+         <H2  class="alert alert-success">  Pay Bill Amount : {{billAmount | currency:'INR'}} </H2>
+    </div> 
+
+    <div class="card" style="width: 40rem; height: auto;"> 
+        
+        <div class="card-header">
+            Pay using Credit or Debit card
+          </div>
+          <div class="card-body" style="text-align:left">
+        <form [formGroup]="paymentRef" class="container col-md-6" (ngSubmit))="validatePayment()" >
+
+        <div class="form-group"> 
+          <label> Card Number </label> 
+          <input class="form-control" type="text"    name="cardNo" formControlName="cardNo" placeholder="###-###-###" required/> 
+         </div> 
+        
+        <div class="form-group"> 
+
+          <label> Expiry Date </label> 
+          <input type="date" class="form-control" name="date"   formControlName="date" placeholder="DD-MM-YY" required/> 
+                
+        </div> 
+
+        <div class="form-group"> 
+            <label> CVV number </label> 
+              <input type="password" class="form-control" name="cvv"   formControlName="cvv" placeholder="xxx" required/>
+             
+          </div> 
+  
+          <div class="form-group"> 
+              <label> Card Holder name </label> 
+              <input type="text" class="form-control"  name="name"  formControlName="name" placeholder="Enter your Name" required /> 
+            
+          </div> 
+  <br/>
+          <button type="submit"  class="btn btn-primary" (click)="validatePayment()">Pay</button> 
+        
+        </form>    
+  
+        </div> 
+  
+      </div> 
+  
+  
