@@ -22,15 +22,15 @@ export class CartService {
 
   getCartData(userId:any):Observable<Cart[]>{
 
-    alert("Inside Cart Service");
+    //alert("Inside Cart Service");
 
     return this.http.get<Cart[]>(this.baseUrl+"/getCartData/"+userId);
 
   }
 
   deleteCartData(cartId:any):Observable<any>{
-    alert("Inside deleteCartData in Cart Service");
-   alert(this.baseUrl+"/deleteCartData/"+cartId)
+    //alert("Inside deleteCartData in Cart Service");
+   //alert(this.baseUrl+"/deleteCartData/"+cartId)
     return this.http.delete(this.baseUrl+"/deleteCartData/"+cartId,{ responseType: 'text' });
   }
 

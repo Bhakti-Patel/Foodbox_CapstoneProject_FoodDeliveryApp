@@ -39,7 +39,7 @@ this.register = false;
     console.log(userDetails);
 
     if(!this.register){
-      alert("Register");
+      //alert("Register");
 
       this.userService.addUser(userDetails).subscribe(data=>{
           this.msg="User Registered Successfully.Login to continue...!!"
@@ -50,7 +50,7 @@ this.register = false;
 
     }
     else{
-      alert("Login")
+     // alert("Login")
     this.userService.getAllUsers().subscribe( userList =>  {
 
       console.log(userList);
@@ -58,7 +58,7 @@ this.register = false;
       userList.forEach( data => { 
        if(data.email == userDetails.email && data.password == userDetails.password){
     
-          alert("Login Successful!")
+          //alert("Login Successful!")
     
            console.log("login success")
            console.log("UserId in UserLoginComponent::"+data.userId)

@@ -38,7 +38,7 @@ loadCuisines(){
 }
     deleteCuisine(cuisineId:any){
 
-      alert("cuisineId"+cuisineId)
+     // alert("cuisineId"+cuisineId)
 
       return this.cuisineService.deleteCuisine(cuisineId).subscribe( data => {  
         console.log(data);  

@@ -26,7 +26,7 @@ email:any;
   }
 
   orderReportByUser(){
-    alert("In Order-Details")
+    //alert("In Order-Details")
 
     this.orderService.orderReportByUser(this.userId).subscribe(data=>{
       this.orderReportList = data;

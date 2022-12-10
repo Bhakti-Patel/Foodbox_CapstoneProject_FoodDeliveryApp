@@ -46,10 +46,10 @@ export class CartComponent implements OnInit {
 }
 
 deleteCartData(cartId:any){
-  alert("Inside deleteCartData in cart.component.ts")
+ // alert("Inside deleteCartData in cart.component.ts")
   this.cartService.deleteCartData(cartId).subscribe(data =>{  
       console.log(data);  
-      alert("item deleted ")
+     // alert("item deleted ")
       this.deleteMsg="Item deleted successfully!!";  
       this.cartService.getCartData(this.userId).subscribe(data =>{  
         this.cartInfo =data  
@@ -63,14 +63,14 @@ deleteCartData(cartId:any){
 }
 
 decreaseQuantity(cart: any, cartId: any) {
-  alert("Inside decrease quantity")
+  //alert("Inside decrease quantity")
   cart.quantity -= 1;
   cart.totalPrice = cart.quantity * cart.price;
   this.updateCart(cart, cartId);   
 }
 
 increaseQuantity(cart: any, cartId: any) {
-  alert("Inside incerase quantity")
+  //alert("Inside incerase quantity")
 
   cart.quantity += 1;
  
@@ -93,7 +93,7 @@ findTotalPrice() {
     for(let cart of carts){
       this.grandTotal += cart.totalPrice;
       this.cartIds.push(cart.cartId);
-      alert(cart.cartId)
+      //alert(cart.cartId)
 
      }
   });
@@ -101,9 +101,9 @@ findTotalPrice() {
 }
 checkOut(){
 
-alert("Payment Successfull")
-alert("cart ids:::"+this.cartIds)
-alert(this.userId);
+//alert("Payment Successfull")
+//alert("cart ids:::"+this.cartIds)
+//alert(this.userId);
 
 this.router.navigate(['payment',this.userId,this.grandTotal], {
   queryParams: { myArray: this.cartIds },

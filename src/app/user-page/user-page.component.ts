@@ -88,7 +88,7 @@ getCuisineItems(cuisineId:any){
 
     console.log("User Id in getCartData() in UserPageComponent::::::::::"+this.userId)
    
-    alert("Inside Cart Component..........");
+   // alert("Inside Cart Component..........");
    
     this.router.navigate(['cart',this.userId]);
   

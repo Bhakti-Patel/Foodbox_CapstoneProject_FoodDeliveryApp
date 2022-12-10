@@ -98,7 +98,7 @@ cuisineItemList:Array<CuisineDetails>=[];
 
 update(){
 
-  alert("Update Form Submit")
+ // alert("Update Form Submit")
 
   let cuisineItems = this.cuisineUpdateForm.value;
   
@@ -161,7 +161,7 @@ update(){
   }
 deleteCuisineItem(cuisine_details_id:any){
 
-  alert("Inside DeleteCuisine Item");
+ // alert("Inside DeleteCuisine Item");
   
   this.cuisineService.deleteCuisineItem(cuisine_details_id).subscribe(  
     data => {       
@@ -175,7 +175,7 @@ deleteCuisineItem(cuisine_details_id:any){
 
 }
 addCuisineItem(){
-  alert("Inside addCuisine Item in CuisineItemComponent")
+  //alert("Inside addCuisine Item in CuisineItemComponent")
   this.router.navigate(['add-cuisine-item',this.cuisineId]);
 }
 }

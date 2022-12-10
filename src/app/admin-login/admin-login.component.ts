@@ -41,7 +41,7 @@ this.adminService.getAllAdmins().subscribe( adminList =>  {
 
   if(data.email == adminDetails.emailid && data.password == adminDetails.password){
 
-      alert("Login Successful!")
+      //alert("Login Successful!")
 
        console.log("login success")
        this.router.navigate(['admin-page']);

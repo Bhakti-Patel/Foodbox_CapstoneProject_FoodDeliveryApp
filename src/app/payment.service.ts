@@ -12,8 +12,8 @@ export class PaymentService {
 
 
   saveOrder(userId:any,cartId:any,totalBill:any):Observable<any>{
-    alert("In Payment Service::cartId:"+cartId)
-    alert("In Payment Service::billAmount:"+totalBill)
+    //alert("In Payment Service::cartId:"+cartId)
+    //alert("In Payment Service::billAmount:"+totalBill)
 
 
     return this.http.post<any>(this.baseUrl+"/saveOrder",{userId,cartId,totalBill});

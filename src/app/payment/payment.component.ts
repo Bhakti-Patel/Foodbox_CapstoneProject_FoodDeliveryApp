@@ -30,13 +30,13 @@ export class PaymentComponent implements OnInit {
   ngOnInit(): void {
 
     this.cartIds = this.route.snapshot.queryParams['myArray'];
-    alert("myArray:::::"+this.cartIds)
+    //alert("myArray:::::"+this.cartIds)
 
     this.route.params.subscribe( (param:any) => {
       this.billAmount = param['grandTotal']
-      alert("Bill Amount::::::::"+this.billAmount)
+      //alert("Bill Amount::::::::"+this.billAmount)
       this.userId = param['userId']
-      alert("User id"+this.userId)
+      //alert("User id"+this.userId)
     
     });
     this.nav.hide();
@@ -46,10 +46,10 @@ export class PaymentComponent implements OnInit {
 
   validatePayment(){
 
-    alert("Payment Scuccessfull");
-    alert("cartIds length"+this.cartIds.length)
+   // alert("Payment Scuccessfull");
+    //alert("cartIds length"+this.cartIds.length)
     for (let i = 0; i < this.cartIds.length ; i++) {
-      alert ("Block statement execution cart Id" + this.cartIds[i]);
+     // alert ("Block statement execution cart Id" + this.cartIds[i]);
       this.paymentService.saveOrder(this.userId,this.cartIds[i],this.billAmount).subscribe(data =>{  
 
         this.orderData = data;

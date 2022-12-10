@@ -18,14 +18,14 @@ export class CuisineService {
   }
 
   deleteCuisine(cuisineId:any):Observable<any>{
-    alert("Inside deleteCuisine in Cuisine Service");
-    alert(this.baseUrl+"/deleteCuisine/"+cuisineId)
+   // alert("Inside deleteCuisine in Cuisine Service");
+   // alert(this.baseUrl+"/deleteCuisine/"+cuisineId)
     return this.http.delete(this.baseUrl+"/deleteCuisine/"+cuisineId,{ responseType: 'text' });
   }
 
   deleteCuisineItem(cuisine_details_id:any):Observable<any>{
-    alert("Inside deleteCuisineItem in Cuisine Service");
-    alert(this.baseUrl+"/deleteCuisineItem/"+cuisine_details_id)
+   // alert("Inside deleteCuisineItem in Cuisine Service");
+   // alert(this.baseUrl+"/deleteCuisineItem/"+cuisine_details_id)
     return this.http.delete(this.baseUrl+"/deleteCuisineItem/"+cuisine_details_id,{ responseType: 'text' });
   }
 
